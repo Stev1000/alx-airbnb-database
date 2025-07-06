@@ -2,7 +2,7 @@
 SELECT 
     bookings.booking_id,
     bookings.booking_date,
-    bookings.user_id,
+    users.user_id,
     users.first_name,
     users.last_name,
     properties.property_id,
@@ -16,11 +16,11 @@ JOIN users ON bookings.user_id = users.user_id
 JOIN properties ON bookings.property_id = properties.property_id
 JOIN payments ON bookings.booking_id = payments.booking_id;
 
--- Analyze performance of the query
+-- Analyze performance of the query using EXPLAIN
 EXPLAIN SELECT 
     bookings.booking_id,
     bookings.booking_date,
-    bookings.user_id,
+    users.user_id,
     users.first_name,
     users.last_name,
     properties.property_id,
@@ -34,7 +34,7 @@ JOIN users ON bookings.user_id = users.user_id
 JOIN properties ON bookings.property_id = properties.property_id
 JOIN payments ON bookings.booking_id = payments.booking_id;
 
--- Refactored (optimized) query
+-- Refactored query (optional optimization)
 SELECT 
     b.booking_id,
     b.booking_date,
