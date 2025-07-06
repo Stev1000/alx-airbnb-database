@@ -1,4 +1,4 @@
-## Table Schema
+# Table Schema
 
 ```sql
 CREATE TABLE Booking (
